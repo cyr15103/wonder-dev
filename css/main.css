@@ -1,0 +1,211 @@
+body {
+  margin: 0 auto;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#particle-div {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 1100px;
+  height: 700px;
+}
+
+#home-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#home-container h2 {
+  color: #ffffff;
+}
+
+#phaser {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bg-color {
+  position: relative;
+  margin: 0;
+  height: inherit;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #78B1CE;
+  filter: blur(50px);
+  -webkit-filter: blur(50px);
+  z-index: -100;
+}
+
+.ground {
+  height: 400px;
+  width: 100vw;
+  background-color: #78B1CE;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  opacity: 100%;
+}
+
+/*.short-logo {
+    width:100px;
+}
+#logo {
+    width:950px;
+    margin-top:-100px;
+}
+
+nav {
+    h2 {
+    font-family: 'Comfortaa', cursive;//gloria-hallelujah, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size:20px;
+    margin-top:-10px;
+    margin-bottom:0;
+    color:#40575E;
+    letter-spacing: 0.75px;
+    }
+}
+
+h2 {
+    font-family: 'Comfortaa', cursive;//gloria-hallelujah, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom:0;
+    color:#40575E;
+    letter-spacing: 0.75px;
+    margin-top:40px;
+    font-size:26px;
+}
+
+
+
+#button-row {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+#margin {
+    margin-left:50px;
+}
+
+.home-b {
+    padding:0px 10px 0px 10px;
+    background-color:rgba(30,37,61,0.55);
+    border: 2px solid $main; 
+    border-radius:60px;
+    width:200px;
+    height:90px;
+    margin-top:35px;
+    
+        .desc-home-b {
+            display:none;
+        }
+        h3 {
+            display:inline;
+        }
+}
+.home-b:hover {
+    background-color:rgba(187,222,249,0.55);
+    border: 2px solid rgb(30,37,61);
+    cursor: pointer;
+        .desc-home-b {
+            display:inline;
+        }
+        h3 {
+            display:none;
+        }
+}
+
+h3 {
+    font-family: 'Comfortaa', cursive;
+    font-size:20px;
+    color:$main;
+    font-weight:normal;
+    letter-spacing: 1.5px;
+}
+
+.desc-home-b {
+    font-family: 'Comfortaa', cursive;
+    font-size:18px;
+    color:rgb(30,37,61);
+    margin:0;
+    margin-top:6px;
+}
+
+#home-desc {
+    p {
+        font-family:'Comfortaa', cursive;// gloria-hallelujah, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size:20px;
+        margin-top:10px;
+        padding-top:5px;
+        color:#ffffff;
+    }
+}
+
+.box-1 {
+    width:250px;
+}
+#animation-box {
+    height:453px;
+    width:798.5px;
+    animation: run 8s steps(190) infinite;
+}
+
+.png-sequence {
+    background: url('../images/animated-png.png') left top;
+    background-size: 11179px 6342px;
+}
+
+@keyframes run {
+    0% {background-position: 0;}
+    100% {background-position:-11179px; }
+}
+*/
+/*# sourceMappingURL=main.css.map */
