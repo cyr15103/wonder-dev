@@ -138,10 +138,10 @@ var RainScene = new Phaser.Class({
           // adds player
           gameState.player = this.physics.add.sprite(250, 825, 'girl').setScale(0.9);
     
-          var speechbubble = this.add.sprite(950, 1100, 'speechbubble');
-          var text1 = this.add.text(550, 1080, 'LYLA: Did you know daffodils are my favorite flower?', { font: '30px Comfortaa', fill: '#fff' });
-          var text2 = this.add.text(600, 1080, 'LYLA: That\'s Daisy and her new baby Puddle!', { font: '30px Comfortaa', fill: '#fff' });
-          var text3 = this.add.text(650, 1080, 'LYLA: My blueberry bush is growing!', { font: '30px Comfortaa', fill: '#fff' });
+          speechbubble = this.add.sprite(950, 1100, 'speechbubble');
+          text1 = this.add.text(550, 1080, 'LYLA: Did you know daffodils are my favorite flower?', { font: '30px Comfortaa', fill: '#fff' });
+          text2 = this.add.text(600, 1080, 'LYLA: That\'s Daisy and her new baby Puddle!', { font: '30px Comfortaa', fill: '#fff' });
+          text3 = this.add.text(650, 1080, 'LYLA: My blueberry bush is growing!', { font: '30px Comfortaa', fill: '#fff' });
           speechbubble.alpha = 0;
           text1.alpha = 0;
           text2.alpha = 0;
@@ -152,25 +152,31 @@ var RainScene = new Phaser.Class({
           text3.setScrollFactor(0);
         
         triggerSpeech.on('pointerdown', function () {
-          speechbubble.alpha = 1;
-          text1.alpha = 1;  
-          setTimeout(function(){ speechbubble.alpha = 0;   text1.alpha = 0}, 5000);
+          if (speechbubble.alpha === 0 && text2.alpha === 0 && text3.alpha === 0) {
+              speechbubble.alpha = 1;
+              text1.alpha = 1;  
+              setTimeout(function(){ speechbubble.alpha = 0;   text1.alpha = 0}, 5000);
+            }
           });
 
         ducks.on('pointerdown', function () {
           // console.log('clicked');
           quack.play();
           ducks.anims.play('flapandmove', true);
-          speechbubble.alpha = 1;
-          text2.alpha = 1;  
-          setTimeout(function(){ speechbubble.alpha = 0;   text2.alpha = 0}, 4000);
+            if (speechbubble.alpha === 0 && text1.alpha === 0 && text3.alpha === 0) {
+              speechbubble.alpha = 1;
+              text2.alpha = 1;  
+              setTimeout(function(){ speechbubble.alpha = 0;   text2.alpha = 0}, 4000);
+            }
          });
 
         triggerPlant.on('pointerdown', function () {
           plant.anims.play('grow', true);
-          speechbubble.alpha = 1;
-          text3.alpha = 1;  
-          setTimeout(function(){ speechbubble.alpha = 0;   text3.alpha = 0}, 5000);
+            if (speechbubble.alpha === 0 && text1.alpha === 0 && text2.alpha === 0) {
+              speechbubble.alpha = 1;
+              text3.alpha = 1;  
+              setTimeout(function(){ speechbubble.alpha = 0;   text3.alpha = 0}, 3000);
+            }
         });
 
   
@@ -460,21 +466,11 @@ var RainScene = new Phaser.Class({
             gameState.player.anims.stop();
         });*/
 
-      
-
         triggerChimes.on('pointerdown', function () {
           console.log('clicked');
           chimesR.play();
         });
-      
-        /*if(){
-          speech1 = this.add.sprite(playerx+150, gameState.player.y-100, 'speech1-3');
-        }
-        */
-     /*  if (speech1.anims.currentAnim.key === 'hide') {
-        console.log('hide is playing')
-      }*/
-             
+   
        // playerx = gameState.player.x;
        // console.log(playerx);
        //speeds up the rain on the up arrow
@@ -669,7 +665,7 @@ var RainScene = new Phaser.Class({
           console.log('From RainScene to SummerScene');
           this.cameras.main.fade(800, 0, 0, 0, false, function(camera, progress){
             if (progress > .9) {
-            this.scene.start('summerScene')  
+            this.scene.start('summerScene');  
             document.querySelector(".ground").style.backgroundColor = "#789344";
             document.querySelector(".bg-color").style.backgroundColor = "#5ac0ff";  
           }
@@ -709,7 +705,10 @@ var RainScene = new Phaser.Class({
     
     //end rain scene code
 
-    var text;
+    var text1;
+    var text2;
+    var text3;
+    var speechbubble;
     var raining;
     var triggerChimes;
     var chimesR;

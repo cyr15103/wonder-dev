@@ -13,11 +13,6 @@ var LeafScene = new Phaser.Class({
     
     preload: function ()
     {
-        /*this.load.image('leaf', 'images/leaf.png');
-        this.load.spritesheet('girl3', 'images/sprite-sheet-3.png', { frameWidth: 270, frameHeight: 360 });
-        this.load.image('bg1f', 'images/bg-1-f.png');
-        this.load.image('bg2f', 'images/bg-2-f.png');
-        this.load.image('bg3f', 'images/bg-3-f.png');*/
     },
     
     create: function (){
@@ -192,28 +187,36 @@ var LeafScene = new Phaser.Class({
           text4.setScrollFactor(0);
         
           triggerleafpile.on('pointerdown', function () {
-            speechbubble3.alpha = 1;
-            text1.alpha = 1;  
-            setTimeout(function(){ speechbubble3.alpha = 0;   text1.alpha = 0}, 5000);
+            if (speechbubble3.alpha === 0 && text2.alpha === 0 && text3.alpha === 0 && text4.alpha === 0) {
+              speechbubble3.alpha = 1;
+              text1.alpha = 1;  
+              setTimeout(function(){ speechbubble3.alpha = 0;   text1.alpha = 0}, 3500);
+            }
           });
 
           triggerGhosts.on('pointerdown', function () {
-            speechbubble3.alpha = 1;
-            text2.alpha = 1;  
-            setTimeout(function(){ speechbubble3.alpha = 0;   text2.alpha = 0}, 5000);
+            if (speechbubble3.alpha === 0 && text1.alpha === 0 && text3.alpha === 0 && text4.alpha === 0) {
+              speechbubble3.alpha = 1;
+              text2.alpha = 1;  
+              setTimeout(function(){ speechbubble3.alpha = 0;   text2.alpha = 0}, 4000);
+            }
           });
 
           triggerTreeSquirrel.on('pointerdown', () => {
             squirrel.anims.play('hideintree', true);
-            speechbubble3.alpha = 1;
-            text3.alpha = 1;  
-            setTimeout(function(){ speechbubble3.alpha = 0;   text3.alpha = 0}, 4000);
+            if (speechbubble3.alpha === 0 && text1.alpha === 0 && text2.alpha === 0 && text4.alpha === 0) {
+              speechbubble3.alpha = 1;
+              text3.alpha = 1;  
+              setTimeout(function(){ speechbubble3.alpha = 0;   text3.alpha = 0}, 3500);
+            }
            });  
 
            kidpump.on('pointerdown', () => {
-            speechbubble3.alpha = 1;
-            text4.alpha = 1;  
-            setTimeout(function(){ speechbubble3.alpha = 0;   text4.alpha = 0}, 2700);
+            if (speechbubble3.alpha === 0 && text1.alpha === 0 && text2.alpha === 0 && text3.alpha === 0) {
+              speechbubble3.alpha = 1;
+              text4.alpha = 1;  
+              setTimeout(function(){ speechbubble3.alpha = 0;   text4.alpha = 0}, 2700);
+            }
            });  
           
           //sets cameras

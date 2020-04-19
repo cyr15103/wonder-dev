@@ -12,10 +12,6 @@ var SummerScene = new Phaser.Class({
     
     preload: function ()
     {
-     /*   this.load.spritesheet('girl', 'images/sprite-sheet-1.png', { frameWidth: 270, frameHeight: 360 });
-        this.load.image('bg1-b', 'images/bg-1-b.png');
-        this.load.image('bg2-b', 'images/bg-2-b.png');
-        this.load.image('bg3-b', 'images/bg-3-b.png');*/
     },
     
     create: function ()
@@ -179,9 +175,11 @@ var SummerScene = new Phaser.Class({
         
           triggerBark.on('pointerdown', function () {
             //console.log('clicked');
-            speechbubble2.alpha = 1;
-            text1.alpha = 1;  
-            setTimeout(function(){ speechbubble2.alpha = 0;   text1.alpha = 0}, 4000);
+            if (speechbubble2.alpha === 0 && text1.alpha === 0 && text3.alpha === 0) {
+              speechbubble2.alpha = 1;
+              text1.alpha = 1;  
+              setTimeout(function(){ speechbubble2.alpha = 0;   text1.alpha = 0}, 4000);
+            }
             puppy.anims.play('bark', true);
             bark.play();
           });
@@ -190,15 +188,19 @@ var SummerScene = new Phaser.Class({
             //console.log('clicked');
             bees.play();
             beehive.anims.play('hive', true);
-            speechbubble2.alpha = 1;
-            text2.alpha = 1;  
-            setTimeout(function(){ speechbubble2.alpha = 0;   text2.alpha = 0}, 3000);
+            if (speechbubble2.alpha === 0 && text2.alpha === 0 && text3.alpha === 0) {
+              speechbubble2.alpha = 1;
+              text2.alpha = 1;  
+              setTimeout(function(){ speechbubble2.alpha = 0;   text2.alpha = 0}, 3000);
+            }
           });
 
           triggerCall.on('pointerdown', function () {
             kitchenAndCall.play();
-            setTimeout(function(){ speechbubble2.alpha = 1;   text3.alpha = 1}, 11000);
-            setTimeout(function(){ speechbubble2.alpha = 0;   text3.alpha = 0}, 15000);
+            //if (speechbubble2.alpha === 0 && text1.alpha === 0 && text2.alpha === 0) {
+              setTimeout(function(){ speechbubble2.alpha = 1;   text3.alpha = 1}, 11000);
+              setTimeout(function(){ speechbubble2.alpha = 0;   text3.alpha = 0}, 15000);
+            //}
           });
 
           //sets cameras

@@ -148,25 +148,30 @@
         text3.setScrollFactor(0);
       
       triggerSnowangel.on('pointerdown', function () {
-        speechbubble4.alpha = 1;
-        text1.alpha = 1;  
-        setTimeout(function(){ speechbubble4.alpha = 0;   text1.alpha = 0}, 3000);
+        if (speechbubble4.alpha === 0 && text2.alpha === 0 && text3.alpha === 0) {
+          speechbubble4.alpha = 1;
+          text1.alpha = 1;  
+          setTimeout(function(){ speechbubble4.alpha = 0;   text1.alpha = 0}, 3000);
+        }
      });
 
       sled.on('pointerdown', function () {
-        //console.log('clicked');
-        bells.play();
-        speechbubble4.alpha = 1;
-        text2.alpha = 1;  
-        setTimeout(function(){ speechbubble4.alpha = 0;   text2.alpha = 0}, 5000);
+        if (speechbubble4.alpha === 0 && text1.alpha === 0 && text3.alpha === 0) { 
+          bells.play();
+          speechbubble4.alpha = 1;
+          text2.alpha = 1;  
+          setTimeout(function(){ speechbubble4.alpha = 0;   text2.alpha = 0}, 4500);
+        }
       });
 
       
       snowman.on('pointerdown', function () {
         // console.log('clicked');
         snowman.anims.play('wink', true);
-        setTimeout(function(){ speechbubble4.alpha = 1;   text3.alpha = 1}, 1500);
-        setTimeout(function(){ speechbubble4.alpha = 0;   text3.alpha = 0}, 4500);
+        if (speechbubble4.alpha === 0 && text1.alpha === 0 && text2.alpha === 0) {
+          setTimeout(function(){ speechbubble4.alpha = 1;   text3.alpha = 1}, 1500);
+          setTimeout(function(){ speechbubble4.alpha = 0;   text3.alpha = 0}, 4500);
+        }
        });
    
         
