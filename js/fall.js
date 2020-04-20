@@ -286,7 +286,7 @@ var LeafScene = new Phaser.Class({
                 key: 'lightup3',
                 frames: [
                     { key: 'pump' },
-                    { key: 'litpump', duration: 600 },
+                    { key: 'litpump', duration: 2000 },
                     { key: 'pump'}
                 ],
                 frameRate: 5,

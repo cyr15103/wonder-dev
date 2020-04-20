@@ -54,7 +54,7 @@ var SummerScene = new Phaser.Class({
           bees.setVolume(0.2);
           
           summeramb = this.sound.add('summeramb');
-          summeramb.setVolume(0.5);
+          summeramb.setVolume(0.3);
           summeramb.setLoop(true);
           summeramb.play();
           footstepsG = this.sound.add('footstepsonground2');
