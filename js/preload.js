@@ -107,7 +107,7 @@ var PreloadScene = new Phaser.Class({
         this.load.image('plant', 'images/plant.png');
         this.load.image('plant2', 'images/plant-2.png');
         this.load.image('plant3', 'images/plant-3.png');
-        this.load.audio('footstepsonground', ['sounds/footstepsonground.mp3']);
+        this.load.audio('footstepsinmud', ['sounds/footstepsinmud.mp3']);
 
         //summer scene assets
         this.load.spritesheet('girl4', 'images/sprite-sheet-4.png', { frameWidth: 540, frameHeight: 720 });

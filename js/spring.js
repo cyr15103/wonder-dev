@@ -57,8 +57,8 @@ var RainScene = new Phaser.Class({
           raining.setLoop(true);
           raining.setVolume(0.5);
           raining.play();
-          footstepsG = this.sound.add('footstepsonground');
-          footstepsG.setLoop(true);
+          footstepsM = this.sound.add('footstepsinmud');
+          footstepsM.setLoop(true);
 
         triggerlightup4.on('pointerdown', function () {
             on.play();
@@ -446,25 +446,25 @@ var RainScene = new Phaser.Class({
               gameState.player.flipX = false;
               gameState.player.setVelocityX(gameState.speed);
               gameState.player.anims.play('right', true);
-              if(!footstepsG.isPlaying) footstepsG.play();
+              if(!footstepsM.isPlaying) footstepsM.play();
             } else if (gameState.cursors.left.isDown) {
               gameState.player.flipX = false;
               gameState.player.setVelocityX(-gameState.speed);
               gameState.player.anims.play('left', true);
-              if(!footstepsG.isPlaying) footstepsG.play();
+              if(!footstepsM.isPlaying) footstepsM.play();
             } else if (Phaser.Input.Keyboard.JustUp(gameState.cursors.left)){
               gameState.player.setVelocityX(0);
               gameState.player.anims.play('lidle', true);
-              if(footstepsG.isPlaying) footstepsG.stop();
+              if(footstepsM.isPlaying) footstepsM.stop();
             }else if (Phaser.Input.Keyboard.JustUp(gameState.cursors.right)) {
               gameState.player.setVelocityX(0);
               gameState.player.anims.play('idle', true);
-              if(footstepsG.isPlaying) footstepsG.stop(); 
+              if(footstepsM.isPlaying) footstepsM.stop(); 
             }
            
         }
 
-      /* speech1.on('animationcomplete-hide', function() {
+            /* speech1.on('animationcomplete-hide', function() {
               console.log('complete');
               gameState.player.anims.play();
           });
@@ -721,4 +721,4 @@ var RainScene = new Phaser.Class({
     var triggerChimes;
     var chimesR;
     var playerx;
-    var footstepsG;
+    var footstepsM;
