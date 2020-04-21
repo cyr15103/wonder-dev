@@ -97,6 +97,14 @@ var SummerScene = new Phaser.Class({
             }
           }) 
         });    
+
+        document.addEventListener('fullscreenchange', (event) => {
+          if (document.fullscreenElement) {
+            console.log(`Element: ${document.fullscreenElement.id} entered full-screen mode.`);
+          } else {
+          game.scale.stopFullscreen();
+          }
+        });
   
         fullbtn.on('pointerdown', function () {
           if (game.scale.isFullscreen) {

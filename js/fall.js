@@ -103,18 +103,26 @@ var LeafScene = new Phaser.Class({
           }) 
         });    
 
+        document.addEventListener('fullscreenchange', (event) => {
+          if (document.fullscreenElement) {
+            console.log(`Element: ${document.fullscreenElement.id} entered full-screen mode.`);
+          } else {
+          game.scale.stopFullscreen();
+          }
+        });
+
         fullbtn.on('pointerdown', function () {
           if (game.scale.isFullscreen) {
             game.scale.stopFullscreen();
             // On stop fulll screen
-        } else {
+          }else {
             game.scale.startFullscreen();
            // game.config.parentElement.style.backgroundColor = "#20567e";
             // On start fulll screen
         }
         });  
- 
-          //creates falling leaves
+
+                //creates falling leaves
           gameState2.lpart = this.add.particles('leaf');
           gameState2.lemit = gameState2.lpart.createEmitter({
           x: 1000,
