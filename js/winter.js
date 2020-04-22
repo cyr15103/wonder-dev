@@ -50,6 +50,8 @@
         var triggerdeer = this.add.rectangle(1650, 660, 460, 300, 0xe5b6ae, 0).setInteractive({useHandCursor: true});
         wind = this.sound.add('wind');
         var rumble = this.sound.add('rumble');
+        var pop = this.sound.add('pop');
+        var surprise = this.sound.add('surprise');
         footsteps = this.sound.add('footsteps');
         footsteps.setLoop(true);
         wind.setLoop(true);
@@ -86,6 +88,7 @@
          // console.log('clicked');
           rumble.play();
           fawn.anims.play('shake', true);
+          surprise.play();
         }); 
 
         homebtn.on('pointerdown', () => {
@@ -157,6 +160,7 @@
       
       triggerSnowangel.on('pointerdown', function () {
         if (speechbubble4.alpha === 0 && text2.alpha === 0 && text3.alpha === 0) {
+          pop.play();
           speechbubble4.alpha = 1;
           text1.alpha = 1;  
           setTimeout(function(){ speechbubble4.alpha = 0;   text1.alpha = 0}, 3000);
@@ -165,6 +169,7 @@
 
       sled.on('pointerdown', function () {
         if (speechbubble4.alpha === 0 && text1.alpha === 0 && text3.alpha === 0) { 
+          pop.play();
           bells.play();
           speechbubble4.alpha = 1;
           text2.alpha = 1;  
@@ -176,8 +181,9 @@
       snowman.on('pointerdown', function () {
         // console.log('clicked');
         snowman.anims.play('wink', true);
+        surprise.play();
         if (speechbubble4.alpha === 0 && text1.alpha === 0 && text2.alpha === 0) {
-          setTimeout(function(){ speechbubble4.alpha = 1;   text3.alpha = 1}, 1500);
+          setTimeout(function(){ pop.play(); speechbubble4.alpha = 1;   text3.alpha = 1; }, 1500);
           setTimeout(function(){ speechbubble4.alpha = 0;   text3.alpha = 0}, 4500);
         }
        });

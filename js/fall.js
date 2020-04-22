@@ -52,6 +52,8 @@ var LeafScene = new Phaser.Class({
           fullbtn = this.add.image(1835, 192, 'full-btn').setInteractive({useHandCursor: true});
           triggerChimes = this.add.rectangle(2320, 750, 150, 325, 0xe5b6ae, 0).setInteractive({useHandCursor: true});
           chimesF = this.sound.add('chimes2');
+          var aww = this.sound.add('aww');
+          var pop = this.sound.add('pop');
           fallamb = this.sound.add('fallamb');
           fallamb.setLoop(true);
           fallamb.setVolume(0.6);
@@ -84,6 +86,8 @@ var LeafScene = new Phaser.Class({
 
         foxes.on('pointerdown', () => {
          foxes.anims.play('foxturn', true);
+         setTimeout(function(){ aww.play()}, 1300);
+         
         });
 
         acornSquirrel.on('pointerdown', () => {
@@ -196,6 +200,7 @@ var LeafScene = new Phaser.Class({
         
           triggerleafpile.on('pointerdown', function () {
             if (speechbubble3.alpha === 0 && text2.alpha === 0 && text3.alpha === 0 && text4.alpha === 0) {
+              pop.play();
               speechbubble3.alpha = 1;
               text1.alpha = 1;  
               setTimeout(function(){ speechbubble3.alpha = 0;   text1.alpha = 0}, 3500);
@@ -204,6 +209,7 @@ var LeafScene = new Phaser.Class({
 
           triggerGhosts.on('pointerdown', function () {
             if (speechbubble3.alpha === 0 && text1.alpha === 0 && text3.alpha === 0 && text4.alpha === 0) {
+              pop.play();
               speechbubble3.alpha = 1;
               text2.alpha = 1;  
               setTimeout(function(){ speechbubble3.alpha = 0;   text2.alpha = 0}, 4000);
@@ -213,6 +219,7 @@ var LeafScene = new Phaser.Class({
           triggerTreeSquirrel.on('pointerdown', () => {
             squirrel.anims.play('hideintree', true);
             if (speechbubble3.alpha === 0 && text1.alpha === 0 && text2.alpha === 0 && text4.alpha === 0) {
+              pop.play();
               speechbubble3.alpha = 1;
               text3.alpha = 1;  
               setTimeout(function(){ speechbubble3.alpha = 0;   text3.alpha = 0}, 3500);
@@ -221,6 +228,7 @@ var LeafScene = new Phaser.Class({
 
            kidpump.on('pointerdown', () => {
             if (speechbubble3.alpha === 0 && text1.alpha === 0 && text2.alpha === 0 && text3.alpha === 0) {
+              pop.play();
               speechbubble3.alpha = 1;
               text4.alpha = 1;  
               setTimeout(function(){ speechbubble3.alpha = 0;   text4.alpha = 0}, 2700);

@@ -38,6 +38,10 @@ var PreloadScene = new Phaser.Class({
         this.load.image('error', 'images/error.png');
         this.load.audio('titletrack', ['sounds/titletrack.mp3']);
         //spring scene assets
+        this.load.audio('surprise', ['sounds/surprise.mp3']);
+        this.load.audio('giggle', ['sounds/giggle.mp3']);
+        this.load.audio('aww', ['sounds/aww.mp3']);
+        this.load.audio('pop', ['sounds/pop.mp3']);
         this.load.audio('raining', ['sounds/rain.mp3']);
         this.load.audio('quack', ['sounds/quack.mp3']);
         this.load.audio('on', ['sounds/light-switch.mp3']);

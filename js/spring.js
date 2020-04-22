@@ -59,6 +59,10 @@ var RainScene = new Phaser.Class({
           raining.play();
           footstepsM = this.sound.add('footstepsinmud');
           footstepsM.setLoop(true);
+          var pop = this.sound.add('pop');
+          var aww = this.sound.add('aww');
+          aww.setVolume(0.7);
+          var surprise = this.sound.add('surprise');
 
         triggerlightup4.on('pointerdown', function () {
             on.play();
@@ -91,6 +95,7 @@ var RainScene = new Phaser.Class({
          triggerFrog.on('pointerdown', function () {
            splash.play();
            frog.anims.play('appear', true);
+           surprise.play();
          });
 
         homebtn.on('pointerdown', () => {
@@ -144,7 +149,7 @@ var RainScene = new Phaser.Class({
           
          
           // adds player
-          gameState.player = this.physics.add.sprite(250, 825, 'girl').setScale(0.9);
+          gameState.player = this.physics.add.sprite(300, 825, 'girl').setScale(0.9);
     
           speechbubble = this.add.sprite(950, 1100, 'speechbubble');
           text1 = this.add.text(550, 1080, 'LYLA: Did you know daffodils are my favorite flower?', { font: '30px Comfortaa', fill: '#fff' });
@@ -161,6 +166,7 @@ var RainScene = new Phaser.Class({
         
         triggerSpeech.on('pointerdown', function () {
           if (speechbubble.alpha === 0 && text2.alpha === 0 && text3.alpha === 0) {
+              pop.play();
               speechbubble.alpha = 1;
               text1.alpha = 1;  
               setTimeout(function(){ speechbubble.alpha = 0;   text1.alpha = 0}, 5000);
@@ -172,6 +178,7 @@ var RainScene = new Phaser.Class({
           quack.play();
           ducks.anims.play('flapandmove', true);
             if (speechbubble.alpha === 0 && text1.alpha === 0 && text3.alpha === 0) {
+              pop.play();
               speechbubble.alpha = 1;
               text2.alpha = 1;  
               setTimeout(function(){ speechbubble.alpha = 0;   text2.alpha = 0}, 4000);
@@ -181,6 +188,7 @@ var RainScene = new Phaser.Class({
         triggerPlant.on('pointerdown', function () {
           plant.anims.play('grow', true);
             if (speechbubble.alpha === 0 && text1.alpha === 0 && text2.alpha === 0) {
+              pop.play();
               speechbubble.alpha = 1;
               text3.alpha = 1;  
               setTimeout(function(){ speechbubble.alpha = 0;   text3.alpha = 0}, 3000);

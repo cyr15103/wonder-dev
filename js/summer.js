@@ -46,6 +46,7 @@ var SummerScene = new Phaser.Class({
           var fullbtn = this.add.image(1835, 192, 'full-btn').setInteractive({useHandCursor: true});
 
           triggerChimes = this.add.rectangle(2320, 750, 150, 325, 0xe5b6ae, 0).setInteractive({useHandCursor: true});
+          var pop = this.sound.add('pop');
           bubbles = this.sound.add('bubbles');
           bubbles.setVolume(0.1);
           chimesB = this.sound.add('chimes3');
@@ -184,6 +185,7 @@ var SummerScene = new Phaser.Class({
           triggerBark.on('pointerdown', function () {
             //console.log('clicked');
             if (speechbubble2.alpha === 0 && text1.alpha === 0 && text3.alpha === 0) {
+              pop.play();
               speechbubble2.alpha = 1;
               text1.alpha = 1;  
               setTimeout(function(){ speechbubble2.alpha = 0;   text1.alpha = 0}, 4000);
@@ -197,6 +199,7 @@ var SummerScene = new Phaser.Class({
             bees.play();
             beehive.anims.play('hive', true);
             if (speechbubble2.alpha === 0 && text2.alpha === 0 && text3.alpha === 0) {
+              pop.play();
               speechbubble2.alpha = 1;
               text2.alpha = 1;  
               setTimeout(function(){ speechbubble2.alpha = 0;   text2.alpha = 0}, 3000);
@@ -206,7 +209,7 @@ var SummerScene = new Phaser.Class({
           triggerCall.on('pointerdown', function () {
             kitchenAndCall.play();
             //if (speechbubble2.alpha === 0 && text1.alpha === 0 && text2.alpha === 0) {
-              setTimeout(function(){ speechbubble2.alpha = 1;   text3.alpha = 1}, 11000);
+              setTimeout(function(){pop.play(); speechbubble2.alpha = 1;   text3.alpha = 1}, 11000);
               setTimeout(function(){ speechbubble2.alpha = 0;   text3.alpha = 0}, 15000);
             //}
           });
