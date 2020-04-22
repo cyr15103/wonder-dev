@@ -16,7 +16,7 @@ var PreloadScene = new Phaser.Class({
     
     preload: function ()
     { 
-
+        //add loading bar
         this.graphics = this.add.graphics();
 		this.newGraphics = this.add.graphics();
         var progressBar = new Phaser.Geom.Rectangle(760, 500, 400, 50);
@@ -28,7 +28,7 @@ var PreloadScene = new Phaser.Class({
 		this.newGraphics.fillStyle(0x78B1CE, 1);
 		this.newGraphics.fillRectShape(progressBarFill);
 
-        
+        //add loading scene text
         var text1 = this.add.text(650,750,"*Optimized for 1920 by 1200 resolution", { fontSize: '32px', fill: '#EFDAC7',  fontFamily: '"Comfortaa"'  });
         var text2 = this.add.text(650,800,"*Wear headphones for best experience", { fontSize: '32px', fill: '#EFDAC7',  fontFamily: '"Comfortaa"'});
         var loadingText = this.add.text(795, 575,"LOADING: ", { fontSize: '38px', fill: '#EFDAC7',  fontFamily: '"Comfortaa"' });
@@ -37,6 +37,7 @@ var PreloadScene = new Phaser.Class({
         this.load.image('title', 'images/titlescene.png');
         this.load.image('error', 'images/error.png');
         this.load.audio('titletrack', ['sounds/titletrack.mp3']);
+
         //spring scene assets
         this.load.audio('surprise', ['sounds/surprise.mp3']);
         this.load.audio('giggle', ['sounds/giggle.mp3']);
@@ -267,22 +268,20 @@ var PreloadScene = new Phaser.Class({
 
 	updateBar(percentage) {
 
-       // console.log("P:" + percentage);
-      
         this.newGraphics.clear();
-this.newGraphics.fillStyle(0x78B1CE, 1);
-this.newGraphics.fillRectShape(new Phaser.Geom.Rectangle(760, 500, percentage*400, 50));
-		
-percentage = percentage * 100;
-this.text1.setText("*Optimized for 1920 by 1200 resolution");
-this.text2.setText("*Wear headphones for best experience");
-this.loadingText.setText("LOADING: " + percentage.toFixed(2) + "%");
-//console.log("P:" + percentage);
+        this.newGraphics.fillStyle(0x78B1CE, 1);
+        this.newGraphics.fillRectShape(new Phaser.Geom.Rectangle(760, 500, percentage*400, 50));
+                
+        percentage = percentage * 100;
+        this.text1.setText("*Optimized for 1920 by 1200 resolution");
+        this.text2.setText("*Wear headphones for best experience");
+        this.loadingText.setText("LOADING: " + percentage.toFixed(2) + "%");
+ 
 	},
 
 	complete() {
-      //  console.log("COMPLETE!");
       
+      //check for mobile device
       var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);

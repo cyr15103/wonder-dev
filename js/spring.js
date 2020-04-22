@@ -324,13 +324,6 @@ var RainScene = new Phaser.Class({
             frameRate: 8,
             repeat: -1
           })
-          
-          /*this.anims.create({
-            key: 'idle',
-            frames: this.anims.generateFrameNumbers('girl', { start: 0, end: 3 }),
-            frameRate: 7,
-            repeat: -1
-          });*/
 
           this.anims.create({
             key: 'idle',
@@ -488,16 +481,6 @@ var RainScene = new Phaser.Class({
             }
            
         }
-
-            /* speech1.on('animationcomplete-hide', function() {
-              console.log('complete');
-              gameState.player.anims.play();
-          });
-
-          speech1.on('animationstart-hide', function() {
-            console.log('start');
-            gameState.player.anims.stop();
-        });*/
 
         triggerChimes.on('pointerdown', function () {
           console.log('clicked');
