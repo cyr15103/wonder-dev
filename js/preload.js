@@ -46,6 +46,14 @@ var PreloadScene = new Phaser.Class({
         this.load.image('speechbubble', 'images/speechbubble.png');
         this.load.image('raindrop', 'images/rain.png',  { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('girl', 'images/sprite-sheet-1.png', { frameWidth: 540, frameHeight: 720 });
+        this.load.image('idle1', 'images/idle-1.png', { frameWidth: 540, frameHeight: 720 });
+        this.load.image('idle2', 'images/idle-2.png', { frameWidth: 540, frameHeight: 720 });
+        this.load.image('idle3', 'images/idle-3.png', { frameWidth: 540, frameHeight: 720 });
+        this.load.image('idle4', 'images/idle-4.png', { frameWidth: 540, frameHeight: 720 });
+        this.load.image('lidle1', 'images/lidle-1.png', { frameWidth: 540, frameHeight: 720 });
+        this.load.image('lidle2', 'images/lidle-2.png', { frameWidth: 540, frameHeight: 720 });
+        this.load.image('lidle3', 'images/lidle-3.png', { frameWidth: 540, frameHeight: 720 });
+        this.load.image('lidle4', 'images/lidle-4.png', { frameWidth: 540, frameHeight: 720 });
         this.load.image('house', 'images/house.png');
         this.load.image('houselit', 'images/house-lit.png');
         this.load.image('tree', 'images/tree.png');

@@ -317,16 +317,33 @@ var RainScene = new Phaser.Class({
             repeat: -1
           })
           
-          this.anims.create({
+          /*this.anims.create({
             key: 'idle',
             frames: this.anims.generateFrameNumbers('girl', { start: 0, end: 3 }),
+            frameRate: 7,
+            repeat: -1
+          });*/
+
+          this.anims.create({
+            key: 'idle',
+            frames: [
+              { key: 'idle1'},
+              { key: 'idle2'},
+              { key: 'idle3'},
+              { key: 'idle4'},
+          ],
             frameRate: 7,
             repeat: -1
           })
   
           this.anims.create({
             key: 'lidle',
-            frames: this.anims.generateFrameNumbers('girl', { start: 8, end: 11 }),
+            frames: [
+              { key: 'lidle1'},
+              { key: 'lidle2'},
+              { key: 'lidle3'},
+              { key: 'lidle4'},
+          ],
             frameRate: 7,
             repeat: -1
         });
