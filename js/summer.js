@@ -208,10 +208,13 @@ var SummerScene = new Phaser.Class({
 
           triggerCall.on('pointerdown', function () {
             kitchenAndCall.play();
-            //if (speechbubble2.alpha === 0 && text1.alpha === 0 && text2.alpha === 0) {
-              setTimeout(function(){pop.play(); speechbubble2.alpha = 1;   text3.alpha = 1}, 11000);
+              setTimeout(function(){
+                if (speechbubble2.alpha === 0 && text1.alpha === 0 && text2.alpha === 0) {
+                pop.play(); 
+                speechbubble2.alpha = 1;   
+                text3.alpha = 1}
+              }, 11000);
               setTimeout(function(){ speechbubble2.alpha = 0;   text3.alpha = 0}, 15000);
-            //}
           });
 
           //sets cameras
